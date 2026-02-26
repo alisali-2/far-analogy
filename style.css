@@ -1,0 +1,133 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.progress-container {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--primary);
+    width: var(--progress, 0%);
+    transition: width 0.3s ease;
+}
+
+.analogy-prompt {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.instruction {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+
+.hidden { display: none !important; }
+
+/* Loader */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Results */
+.result-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+}
+
+.result-q { font-weight: bold; margin-bottom: 0.5rem; }
+.result-a { color: var(--primary); }

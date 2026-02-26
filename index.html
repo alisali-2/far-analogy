@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Far Analogy Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Far Analogy Training Session</h1>
+            <p id="session-subtitle">Beginner–Intermediate</p>
+        </header>
+
+        <div id="loading-state" class="hidden">
+            <div class="loader"></div>
+            <p>Generating your custom training session...</p>
+        </div>
+
+        <div id="app-container" class="hidden">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span id="progress-text">Exercise 1/15</span>
+            </div>
+
+            <div id="exercise-card" class="card">
+                <div id="exercise-content">
+                    <!-- Dynamic content goes here -->
+                </div>
+                <textarea id="user-answer" placeholder="Type your answer here..."></textarea>
+                <div class="controls">
+                    <button id="next-btn">Next</button>
+                    <button id="submit-btn" class="hidden">Submit Session</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <h2>Session Complete</h2>
+            <div id="results-list"></div>
+            <button onclick="location.reload()" class="restart-btn">Start New Session</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
